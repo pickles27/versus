@@ -1,9 +1,10 @@
 {
-  "name": "gaymes",
+  "name": "versus",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:setup": "node scripts/dev-setup.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
