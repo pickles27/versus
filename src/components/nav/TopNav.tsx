@@ -19,15 +19,17 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { cn } from "@/lib/utils";
 
+const gradientShadow = "shadow-neon-orange dark:shadow-purple-600 shadow-sm";
 const navigationMenuLinkStyles =
-  "w-32 bg-background grid place-items-center shadow-neon-orange shadow-sm";
+  cn("w-32 bg-background grid place-items-center", gradientShadow);
 
 export async function TopNav() {
   const session = await auth0.getSession();
 
   return (
-    <div className="fixed z-20 w-full flex items-center justify-between px-3 py-2 bg-gradient-to-r from-[var(--color-neon-orange)] to-[var(--color-neon-tangerine)] shadow-sm">
+    <div className="fixed z-20 w-full flex items-center justify-between px-3 py-2 bg-gradient-to-r from-[var(--color-neon-orange)] dark:from-[var(--color-purple-600)] to-[var(--color-neon-tangerine)] dark:to-[var(--color-blue-500)] shadow-sm">
       <div className="flex-1 mr-auto">
         <TooltipProvider>
           <Tooltip>
@@ -54,7 +56,7 @@ export async function TopNav() {
           <NavigationMenuItem>
             {session ? (
               <>
-                <NavigationMenuTrigger className="shadow-neon-orange shadow-sm">
+                <NavigationMenuTrigger className={gradientShadow}>
                   <div className="flex items-center gap-2">
                     <Avatar className="size-6">
                       <AvatarImage
@@ -67,7 +69,7 @@ export async function TopNav() {
                   </div>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-38 p-2 bg-gradient-to-r from-[var(--color-neon-tangerine)] to-[var(--color-neon-orange)]">
+                  <div className="w-38 p-2">
                     <NavigationMenuLink
                       className={navigationMenuLinkStyles}
                       href="/auth/logout"
