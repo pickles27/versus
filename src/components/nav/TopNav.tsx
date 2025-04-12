@@ -12,27 +12,49 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import Link from "next/link";
 import icon from "../../app/icon.svg";
 import Image from "next/image";
+import { SidebarTrigger } from "../ui/sidebar";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 const navigationMenuLinkStyles =
-  "w-32 grid place-items-center bg-yellow-50 shadow-neon-orange shadow-sm";
+  "w-32 bg-background grid place-items-center shadow-neon-orange shadow-sm";
 
 export async function TopNav() {
   const session = await auth0.getSession();
 
   return (
-    <div className="fixed w-full flex items-center justify-between px-4 py-2 bg-gradient-to-r from-[var(--color-neon-orange)] to-[var(--color-neon-tangerine)] shadow-sm">
-      <div className="flex items-center gap-2">
-        <Image alt="Versus icon" src={icon} width={32} />
-        <Link href="/" className="text-lg font-bold text-shadow-sm">
-          Versus
-        </Link>
+    <div className="fixed z-20 w-full flex items-center justify-between px-3 py-2 bg-gradient-to-r from-[var(--color-neon-orange)] to-[var(--color-neon-tangerine)] shadow-sm">
+      <div className="flex-1 mr-auto">
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span>
+                <SidebarTrigger className="bg-background" />
+              </span>
+            </TooltipTrigger>
+            <TooltipContent side="right">
+              Open sidebar
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
-      <NavigationMenu>
+      <Link
+        href="/"
+        className="text-xl font-bold text-shadow-sm flex items-center gap-2 flex-1"
+      >
+        <Image alt="Versus icon" src={icon} width={32} />
+        Versus
+      </Link>
+      <NavigationMenu className="flex justify-end">
         <NavigationMenuList>
           <NavigationMenuItem>
             {session ? (
               <>
-                <NavigationMenuTrigger className="drop-shadow-sm">
+                <NavigationMenuTrigger className="shadow-neon-orange shadow-sm">
                   <div className="flex items-center gap-2">
                     <Avatar className="size-6">
                       <AvatarImage
@@ -45,7 +67,7 @@ export async function TopNav() {
                   </div>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-38 p-2">
+                  <div className="w-38 p-2 bg-gradient-to-r from-[var(--color-neon-tangerine)] to-[var(--color-neon-orange)]">
                     <NavigationMenuLink
                       className={navigationMenuLinkStyles}
                       href="/auth/logout"
