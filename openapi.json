@@ -55,7 +55,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -81,7 +82,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -110,7 +112,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -123,7 +126,7 @@
     },
     "/friend_requests": {
       "get": {
-        "operationId": "getFriend_requests",
+        "operationId": "getFriendRequests",
         "summary": "Get list of friend_requests",
         "responses": {
           "200": {
@@ -133,7 +136,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Friend_requests"
+                    "$ref": "#/components/schemas/FriendRequests"
                   }
                 }
               }
@@ -142,28 +145,28 @@
         }
       },
       "post": {
-        "operationId": "createFriend_requests",
+        "operationId": "createFriendRequests",
         "summary": "Create a new friend_requests",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Friend_requests"
+                "$ref": "#/components/schemas/FriendRequests"
               }
             }
           }
         },
         "responses": {
           "201": {
-            "description": "Friend_requests created"
+            "description": "FriendRequests created"
           }
         }
       }
     },
     "/friend_requests/{friend_request_id}": {
       "get": {
-        "operationId": "getFriend_requestsById",
+        "operationId": "getFriendRequestsById",
         "summary": "Get a specific friend_requests",
         "parameters": [
           {
@@ -171,7 +174,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -181,7 +185,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Friend_requests"
+                  "$ref": "#/components/schemas/FriendRequests"
                 }
               }
             }
@@ -189,7 +193,7 @@
         }
       },
       "put": {
-        "operationId": "updateFriend_requests",
+        "operationId": "updateFriendRequests",
         "summary": "Update a specific friend_requests",
         "parameters": [
           {
@@ -197,7 +201,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -206,19 +211,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Friend_requests"
+                "$ref": "#/components/schemas/FriendRequests"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Friend_requests updated"
+            "description": "FriendRequests updated"
           }
         }
       },
       "delete": {
-        "operationId": "deleteFriend_requests",
+        "operationId": "deleteFriendRequests",
         "summary": "Delete a specific friend_requests",
         "parameters": [
           {
@@ -226,13 +231,14 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
         "responses": {
           "204": {
-            "description": "Friend_requests deleted"
+            "description": "FriendRequests deleted"
           }
         }
       }
@@ -287,7 +293,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -295,7 +302,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -321,7 +329,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -329,7 +338,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -358,7 +368,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -366,7 +377,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -427,7 +439,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -453,7 +466,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -482,7 +496,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -543,7 +558,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -569,7 +585,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -598,7 +615,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -611,7 +629,7 @@
     },
     "/session_invites": {
       "get": {
-        "operationId": "getSession_invites",
+        "operationId": "getSessionInvites",
         "summary": "Get list of session_invites",
         "responses": {
           "200": {
@@ -621,7 +639,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Session_invites"
+                    "$ref": "#/components/schemas/SessionInvites"
                   }
                 }
               }
@@ -630,28 +648,28 @@
         }
       },
       "post": {
-        "operationId": "createSession_invites",
+        "operationId": "createSessionInvites",
         "summary": "Create a new session_invites",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Session_invites"
+                "$ref": "#/components/schemas/SessionInvites"
               }
             }
           }
         },
         "responses": {
           "201": {
-            "description": "Session_invites created"
+            "description": "SessionInvites created"
           }
         }
       }
     },
     "/session_invites/{invite_id}": {
       "get": {
-        "operationId": "getSession_invitesById",
+        "operationId": "getSessionInvitesById",
         "summary": "Get a specific session_invites",
         "parameters": [
           {
@@ -659,7 +677,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -669,7 +688,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Session_invites"
+                  "$ref": "#/components/schemas/SessionInvites"
                 }
               }
             }
@@ -677,7 +696,7 @@
         }
       },
       "put": {
-        "operationId": "updateSession_invites",
+        "operationId": "updateSessionInvites",
         "summary": "Update a specific session_invites",
         "parameters": [
           {
@@ -685,7 +704,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -694,19 +714,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Session_invites"
+                "$ref": "#/components/schemas/SessionInvites"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Session_invites updated"
+            "description": "SessionInvites updated"
           }
         }
       },
       "delete": {
-        "operationId": "deleteSession_invites",
+        "operationId": "deleteSessionInvites",
         "summary": "Delete a specific session_invites",
         "parameters": [
           {
@@ -714,20 +734,21 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
         "responses": {
           "204": {
-            "description": "Session_invites deleted"
+            "description": "SessionInvites deleted"
           }
         }
       }
     },
     "/session_players": {
       "get": {
-        "operationId": "getSession_players",
+        "operationId": "getSessionPlayers",
         "summary": "Get list of session_players",
         "responses": {
           "200": {
@@ -737,7 +758,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Session_players"
+                    "$ref": "#/components/schemas/SessionPlayers"
                   }
                 }
               }
@@ -746,28 +767,28 @@
         }
       },
       "post": {
-        "operationId": "createSession_players",
+        "operationId": "createSessionPlayers",
         "summary": "Create a new session_players",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Session_players"
+                "$ref": "#/components/schemas/SessionPlayers"
               }
             }
           }
         },
         "responses": {
           "201": {
-            "description": "Session_players created"
+            "description": "SessionPlayers created"
           }
         }
       }
     },
     "/session_players/{session_id}/{user_id}": {
       "get": {
-        "operationId": "getSession_playersById",
+        "operationId": "getSessionPlayersById",
         "summary": "Get a specific session_players",
         "parameters": [
           {
@@ -775,7 +796,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -783,7 +805,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -793,7 +816,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Session_players"
+                  "$ref": "#/components/schemas/SessionPlayers"
                 }
               }
             }
@@ -801,7 +824,7 @@
         }
       },
       "put": {
-        "operationId": "updateSession_players",
+        "operationId": "updateSessionPlayers",
         "summary": "Update a specific session_players",
         "parameters": [
           {
@@ -809,7 +832,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -817,7 +841,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -826,19 +851,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Session_players"
+                "$ref": "#/components/schemas/SessionPlayers"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Session_players updated"
+            "description": "SessionPlayers updated"
           }
         }
       },
       "delete": {
-        "operationId": "deleteSession_players",
+        "operationId": "deleteSessionPlayers",
         "summary": "Delete a specific session_players",
         "parameters": [
           {
@@ -846,7 +871,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -854,20 +880,21 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
         "responses": {
           "204": {
-            "description": "Session_players deleted"
+            "description": "SessionPlayers deleted"
           }
         }
       }
     },
     "/game_state": {
       "get": {
-        "operationId": "getGame_state",
+        "operationId": "getGameState",
         "summary": "Get list of game_state",
         "responses": {
           "200": {
@@ -877,7 +904,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Game_state"
+                    "$ref": "#/components/schemas/GameState"
                   }
                 }
               }
@@ -886,28 +913,28 @@
         }
       },
       "post": {
-        "operationId": "createGame_state",
+        "operationId": "createGameState",
         "summary": "Create a new game_state",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Game_state"
+                "$ref": "#/components/schemas/GameState"
               }
             }
           }
         },
         "responses": {
           "201": {
-            "description": "Game_state created"
+            "description": "GameState created"
           }
         }
       }
     },
     "/game_state/{session_id}": {
       "get": {
-        "operationId": "getGame_stateById",
+        "operationId": "getGameStateById",
         "summary": "Get a specific game_state",
         "parameters": [
           {
@@ -915,7 +942,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -925,7 +953,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Game_state"
+                  "$ref": "#/components/schemas/GameState"
                 }
               }
             }
@@ -933,7 +961,7 @@
         }
       },
       "put": {
-        "operationId": "updateGame_state",
+        "operationId": "updateGameState",
         "summary": "Update a specific game_state",
         "parameters": [
           {
@@ -941,7 +969,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -950,19 +979,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Game_state"
+                "$ref": "#/components/schemas/GameState"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Game_state updated"
+            "description": "GameState updated"
           }
         }
       },
       "delete": {
-        "operationId": "deleteGame_state",
+        "operationId": "deleteGameState",
         "summary": "Delete a specific game_state",
         "parameters": [
           {
@@ -970,20 +999,21 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
         "responses": {
           "204": {
-            "description": "Game_state deleted"
+            "description": "GameState deleted"
           }
         }
       }
     },
     "/game_results": {
       "get": {
-        "operationId": "getGame_results",
+        "operationId": "getGameResults",
         "summary": "Get list of game_results",
         "responses": {
           "200": {
@@ -993,7 +1023,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Game_results"
+                    "$ref": "#/components/schemas/GameResults"
                   }
                 }
               }
@@ -1002,28 +1032,28 @@
         }
       },
       "post": {
-        "operationId": "createGame_results",
+        "operationId": "createGameResults",
         "summary": "Create a new game_results",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Game_results"
+                "$ref": "#/components/schemas/GameResults"
               }
             }
           }
         },
         "responses": {
           "201": {
-            "description": "Game_results created"
+            "description": "GameResults created"
           }
         }
       }
     },
     "/game_results/{result_id}": {
       "get": {
-        "operationId": "getGame_resultsById",
+        "operationId": "getGameResultsById",
         "summary": "Get a specific game_results",
         "parameters": [
           {
@@ -1031,7 +1061,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -1041,7 +1072,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Game_results"
+                  "$ref": "#/components/schemas/GameResults"
                 }
               }
             }
@@ -1049,7 +1080,7 @@
         }
       },
       "put": {
-        "operationId": "updateGame_results",
+        "operationId": "updateGameResults",
         "summary": "Update a specific game_results",
         "parameters": [
           {
@@ -1057,7 +1088,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -1066,19 +1098,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Game_results"
+                "$ref": "#/components/schemas/GameResults"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Game_results updated"
+            "description": "GameResults updated"
           }
         }
       },
       "delete": {
-        "operationId": "deleteGame_results",
+        "operationId": "deleteGameResults",
         "summary": "Delete a specific game_results",
         "parameters": [
           {
@@ -1086,13 +1118,14 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
         "responses": {
           "204": {
-            "description": "Game_results deleted"
+            "description": "GameResults deleted"
           }
         }
       }
@@ -1147,7 +1180,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -1155,7 +1189,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -1181,7 +1216,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -1189,7 +1225,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -1218,7 +1255,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -1226,7 +1264,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -1242,93 +1281,351 @@
     "schemas": {
       "Users": {
         "type": "object",
-        "description": "Schema for users",
         "properties": {
-          "id": {
+          "user_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "auth0_id": {
             "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "bio": {
+            "type": "string"
+          },
+          "is_visible": {
+            "type": "boolean"
+          },
+          "last_active_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
           }
-        }
+        },
+        "required": [
+          "user_id",
+          "auth0_id",
+          "username",
+          "bio",
+          "is_visible",
+          "last_active_at",
+          "created_at"
+        ]
       },
-      "Friend_requests": {
+      "FriendRequests": {
         "type": "object",
-        "description": "Schema for friend_requests",
         "properties": {
-          "id": {
+          "friend_request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "from_user_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "to_user_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
             "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "responded_at": {
+            "type": "string",
+            "format": "date-time"
           }
-        }
+        },
+        "required": [
+          "friend_request_id",
+          "from_user_id",
+          "to_user_id",
+          "status",
+          "created_at",
+          "responded_at"
+        ]
       },
       "Friends": {
         "type": "object",
-        "description": "Schema for friends",
         "properties": {
-          "id": {
-            "type": "string"
+          "user_id_1": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "user_id_2": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
           }
-        }
+        },
+        "required": [
+          "user_id_1",
+          "user_id_2",
+          "created_at"
+        ]
       },
       "Games": {
         "type": "object",
-        "description": "Schema for games",
         "properties": {
-          "id": {
+          "game_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
             "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "thumbnail_url": {
+            "type": "string"
+          },
+          "min_players": {
+            "type": "integer"
+          },
+          "max_players": {
+            "type": "integer"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
           }
-        }
+        },
+        "required": [
+          "game_id",
+          "name",
+          "description",
+          "thumbnail_url",
+          "min_players",
+          "max_players",
+          "created_at"
+        ]
       },
       "Sessions": {
         "type": "object",
-        "description": "Schema for sessions",
         "properties": {
-          "id": {
+          "session_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "game_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "host_user_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "is_private": {
+            "type": "boolean"
+          },
+          "status": {
             "type": "string"
+          },
+          "game_mode": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "completed_at": {
+            "type": "string",
+            "format": "date-time"
           }
-        }
+        },
+        "required": [
+          "session_id",
+          "game_id",
+          "host_user_id",
+          "is_private",
+          "status",
+          "game_mode",
+          "created_at",
+          "started_at",
+          "completed_at"
+        ]
       },
-      "Session_invites": {
+      "SessionInvites": {
         "type": "object",
-        "description": "Schema for session_invites",
         "properties": {
-          "id": {
+          "invite_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "session_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "invited_user_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "invited_by_user_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
             "type": "string"
+          },
+          "invited_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "accepted_at": {
+            "type": "string",
+            "format": "date-time"
           }
-        }
+        },
+        "required": [
+          "invite_id",
+          "session_id",
+          "invited_user_id",
+          "invited_by_user_id",
+          "status",
+          "invited_at",
+          "accepted_at"
+        ]
       },
-      "Session_players": {
+      "SessionPlayers": {
         "type": "object",
-        "description": "Schema for session_players",
         "properties": {
-          "id": {
-            "type": "string"
+          "session_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "user_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "joined_at": {
+            "type": "string",
+            "format": "date-time"
           }
-        }
+        },
+        "required": [
+          "session_id",
+          "user_id",
+          "joined_at"
+        ]
       },
-      "Game_state": {
+      "GameState": {
         "type": "object",
-        "description": "Schema for game_state",
         "properties": {
-          "id": {
-            "type": "string"
+          "session_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "state": {
+            "type": "object"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
           }
-        }
+        },
+        "required": [
+          "session_id",
+          "state",
+          "updated_at"
+        ]
       },
-      "Game_results": {
+      "GameResults": {
         "type": "object",
-        "description": "Schema for game_results",
         "properties": {
-          "id": {
-            "type": "string"
+          "result_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "session_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "user_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "game_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "score": {
+            "type": "integer"
+          },
+          "placement": {
+            "type": "integer"
+          },
+          "won": {
+            "type": "boolean"
+          },
+          "completed_at": {
+            "type": "string",
+            "format": "date-time"
           }
-        }
+        },
+        "required": [
+          "result_id",
+          "session_id",
+          "user_id",
+          "game_id",
+          "score",
+          "placement",
+          "won",
+          "completed_at"
+        ]
       },
       "Leaderboards": {
         "type": "object",
-        "description": "Schema for leaderboards",
         "properties": {
-          "id": {
-            "type": "string"
+          "game_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "user_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "top_score": {
+            "type": "integer"
+          },
+          "total_wins": {
+            "type": "integer"
+          },
+          "total_games": {
+            "type": "integer"
+          },
+          "win_rate": {
+            "type": "number"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
           }
-        }
+        },
+        "required": [
+          "game_id",
+          "user_id",
+          "top_score",
+          "total_wins",
+          "total_games",
+          "win_rate",
+          "updated_at"
+        ]
       }
     }
   }

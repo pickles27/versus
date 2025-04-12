@@ -11,7 +11,7 @@ export default defineConfig({
       mock: true,
     },
     input: {
-      target: './openapi.yml',
+      target: './openapi.json',
     },
   },
 });
