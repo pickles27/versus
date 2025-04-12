@@ -1,0 +1,1335 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Game Portal API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/users": {
+      "get": {
+        "operationId": "getUsers",
+        "summary": "Get list of users",
+        "responses": {
+          "200": {
+            "description": "List of users",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Users"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createUsers",
+        "summary": "Create a new users",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Users"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Users created"
+          }
+        }
+      }
+    },
+    "/users/{user_id}": {
+      "get": {
+        "operationId": "getUsersById",
+        "summary": "Get a specific users",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single users",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Users"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateUsers",
+        "summary": "Update a specific users",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Users"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Users updated"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteUsers",
+        "summary": "Delete a specific users",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Users deleted"
+          }
+        }
+      }
+    },
+    "/friend_requests": {
+      "get": {
+        "operationId": "getFriend_requests",
+        "summary": "Get list of friend_requests",
+        "responses": {
+          "200": {
+            "description": "List of friend_requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Friend_requests"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createFriend_requests",
+        "summary": "Create a new friend_requests",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Friend_requests"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Friend_requests created"
+          }
+        }
+      }
+    },
+    "/friend_requests/{friend_request_id}": {
+      "get": {
+        "operationId": "getFriend_requestsById",
+        "summary": "Get a specific friend_requests",
+        "parameters": [
+          {
+            "name": "friend_request_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single friend_requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Friend_requests"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateFriend_requests",
+        "summary": "Update a specific friend_requests",
+        "parameters": [
+          {
+            "name": "friend_request_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Friend_requests"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Friend_requests updated"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteFriend_requests",
+        "summary": "Delete a specific friend_requests",
+        "parameters": [
+          {
+            "name": "friend_request_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Friend_requests deleted"
+          }
+        }
+      }
+    },
+    "/friends": {
+      "get": {
+        "operationId": "getFriends",
+        "summary": "Get list of friends",
+        "responses": {
+          "200": {
+            "description": "List of friends",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Friends"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createFriends",
+        "summary": "Create a new friends",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Friends"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Friends created"
+          }
+        }
+      }
+    },
+    "/friends/{user_id_1}/{user_id_2}": {
+      "get": {
+        "operationId": "getFriendsById",
+        "summary": "Get a specific friends",
+        "parameters": [
+          {
+            "name": "user_id_1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id_2",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single friends",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Friends"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateFriends",
+        "summary": "Update a specific friends",
+        "parameters": [
+          {
+            "name": "user_id_1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id_2",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Friends"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Friends updated"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteFriends",
+        "summary": "Delete a specific friends",
+        "parameters": [
+          {
+            "name": "user_id_1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id_2",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Friends deleted"
+          }
+        }
+      }
+    },
+    "/games": {
+      "get": {
+        "operationId": "getGames",
+        "summary": "Get list of games",
+        "responses": {
+          "200": {
+            "description": "List of games",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Games"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createGames",
+        "summary": "Create a new games",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Games"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Games created"
+          }
+        }
+      }
+    },
+    "/games/{game_id}": {
+      "get": {
+        "operationId": "getGamesById",
+        "summary": "Get a specific games",
+        "parameters": [
+          {
+            "name": "game_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single games",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Games"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateGames",
+        "summary": "Update a specific games",
+        "parameters": [
+          {
+            "name": "game_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Games"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Games updated"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteGames",
+        "summary": "Delete a specific games",
+        "parameters": [
+          {
+            "name": "game_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Games deleted"
+          }
+        }
+      }
+    },
+    "/sessions": {
+      "get": {
+        "operationId": "getSessions",
+        "summary": "Get list of sessions",
+        "responses": {
+          "200": {
+            "description": "List of sessions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Sessions"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createSessions",
+        "summary": "Create a new sessions",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sessions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Sessions created"
+          }
+        }
+      }
+    },
+    "/sessions/{session_id}": {
+      "get": {
+        "operationId": "getSessionsById",
+        "summary": "Get a specific sessions",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single sessions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Sessions"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateSessions",
+        "summary": "Update a specific sessions",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sessions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sessions updated"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteSessions",
+        "summary": "Delete a specific sessions",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Sessions deleted"
+          }
+        }
+      }
+    },
+    "/session_invites": {
+      "get": {
+        "operationId": "getSession_invites",
+        "summary": "Get list of session_invites",
+        "responses": {
+          "200": {
+            "description": "List of session_invites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Session_invites"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createSession_invites",
+        "summary": "Create a new session_invites",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Session_invites"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Session_invites created"
+          }
+        }
+      }
+    },
+    "/session_invites/{invite_id}": {
+      "get": {
+        "operationId": "getSession_invitesById",
+        "summary": "Get a specific session_invites",
+        "parameters": [
+          {
+            "name": "invite_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single session_invites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Session_invites"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateSession_invites",
+        "summary": "Update a specific session_invites",
+        "parameters": [
+          {
+            "name": "invite_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Session_invites"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Session_invites updated"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteSession_invites",
+        "summary": "Delete a specific session_invites",
+        "parameters": [
+          {
+            "name": "invite_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Session_invites deleted"
+          }
+        }
+      }
+    },
+    "/session_players": {
+      "get": {
+        "operationId": "getSession_players",
+        "summary": "Get list of session_players",
+        "responses": {
+          "200": {
+            "description": "List of session_players",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Session_players"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createSession_players",
+        "summary": "Create a new session_players",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Session_players"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Session_players created"
+          }
+        }
+      }
+    },
+    "/session_players/{session_id}/{user_id}": {
+      "get": {
+        "operationId": "getSession_playersById",
+        "summary": "Get a specific session_players",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single session_players",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Session_players"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateSession_players",
+        "summary": "Update a specific session_players",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Session_players"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Session_players updated"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteSession_players",
+        "summary": "Delete a specific session_players",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Session_players deleted"
+          }
+        }
+      }
+    },
+    "/game_state": {
+      "get": {
+        "operationId": "getGame_state",
+        "summary": "Get list of game_state",
+        "responses": {
+          "200": {
+            "description": "List of game_state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Game_state"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createGame_state",
+        "summary": "Create a new game_state",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Game_state"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Game_state created"
+          }
+        }
+      }
+    },
+    "/game_state/{session_id}": {
+      "get": {
+        "operationId": "getGame_stateById",
+        "summary": "Get a specific game_state",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single game_state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Game_state"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateGame_state",
+        "summary": "Update a specific game_state",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Game_state"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Game_state updated"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteGame_state",
+        "summary": "Delete a specific game_state",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Game_state deleted"
+          }
+        }
+      }
+    },
+    "/game_results": {
+      "get": {
+        "operationId": "getGame_results",
+        "summary": "Get list of game_results",
+        "responses": {
+          "200": {
+            "description": "List of game_results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Game_results"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createGame_results",
+        "summary": "Create a new game_results",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Game_results"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Game_results created"
+          }
+        }
+      }
+    },
+    "/game_results/{result_id}": {
+      "get": {
+        "operationId": "getGame_resultsById",
+        "summary": "Get a specific game_results",
+        "parameters": [
+          {
+            "name": "result_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single game_results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Game_results"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateGame_results",
+        "summary": "Update a specific game_results",
+        "parameters": [
+          {
+            "name": "result_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Game_results"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Game_results updated"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteGame_results",
+        "summary": "Delete a specific game_results",
+        "parameters": [
+          {
+            "name": "result_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Game_results deleted"
+          }
+        }
+      }
+    },
+    "/leaderboards": {
+      "get": {
+        "operationId": "getLeaderboards",
+        "summary": "Get list of leaderboards",
+        "responses": {
+          "200": {
+            "description": "List of leaderboards",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Leaderboards"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createLeaderboards",
+        "summary": "Create a new leaderboards",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Leaderboards"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Leaderboards created"
+          }
+        }
+      }
+    },
+    "/leaderboards/{game_id}/{user_id}": {
+      "get": {
+        "operationId": "getLeaderboardsById",
+        "summary": "Get a specific leaderboards",
+        "parameters": [
+          {
+            "name": "game_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single leaderboards",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Leaderboards"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateLeaderboards",
+        "summary": "Update a specific leaderboards",
+        "parameters": [
+          {
+            "name": "game_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Leaderboards"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Leaderboards updated"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteLeaderboards",
+        "summary": "Delete a specific leaderboards",
+        "parameters": [
+          {
+            "name": "game_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Leaderboards deleted"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Users": {
+        "type": "object",
+        "description": "Schema for users",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Friend_requests": {
+        "type": "object",
+        "description": "Schema for friend_requests",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Friends": {
+        "type": "object",
+        "description": "Schema for friends",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Games": {
+        "type": "object",
+        "description": "Schema for games",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Sessions": {
+        "type": "object",
+        "description": "Schema for sessions",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Session_invites": {
+        "type": "object",
+        "description": "Schema for session_invites",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Session_players": {
+        "type": "object",
+        "description": "Schema for session_players",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Game_state": {
+        "type": "object",
+        "description": "Schema for game_state",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Game_results": {
+        "type": "object",
+        "description": "Schema for game_results",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Leaderboards": {
+        "type": "object",
+        "description": "Schema for leaderboards",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
