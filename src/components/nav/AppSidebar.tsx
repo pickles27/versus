@@ -1,4 +1,11 @@
-import { Home, Inbox, Settings, Trophy, PersonStanding, PlayIcon } from "lucide-react"
+import {
+  Home,
+  Inbox,
+  Settings,
+  Trophy,
+  PersonStanding,
+  PlayIcon,
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -9,7 +16,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+  SidebarSeparator,
+} from "@/components/ui/sidebar";
+import { auth0 } from "@/lib/auth0";
+import { SidebarDropdown } from "./SidebarDropdown";
 
 const items = [
   {
@@ -37,12 +47,14 @@ const items = [
     url: "/settings",
     icon: Settings,
   },
-]
+];
 
-export function AppSidebar() {
+export async function AppSidebar() {
+  const session = await auth0.getSession();
+
   return (
-    <Sidebar className="mt-12" collapsible="icon">
-      <SidebarContent>
+    <Sidebar className="mt-13" collapsible="icon">
+      <SidebarContent className="gap-0">
         <SidebarGroup>
           <SidebarGroupLabel>Versus</SidebarGroupLabel>
           <SidebarGroupContent>
@@ -60,6 +72,7 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        <SidebarSeparator />
         <SidebarGroup>
           <SidebarGroupLabel>Games</SidebarGroupLabel>
           <SidebarGroupContent>
@@ -75,7 +88,26 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        {session?.user && (
+          <>
+            <SidebarSeparator />
+            <SidebarGroup>
+              <SidebarGroupLabel>Account</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarDropdown
+                      firstInitial={session.user.name?.[0]}
+                      nickname={session.user.nickname}
+                      picture={session.user.picture}
+                    />
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </>
+        )}
       </SidebarContent>
     </Sidebar>
-  )
+  );
 }
