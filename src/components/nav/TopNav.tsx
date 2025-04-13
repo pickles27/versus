@@ -1,6 +1,6 @@
 import { auth0 } from "@/lib/auth0";
 import Link from "next/link";
-import icon from "../../app/icon.svg";
+import icon from "../../app/icon.png";
 import Image from "next/image";
 import { SidebarTrigger } from "../ui/sidebar";
 import {

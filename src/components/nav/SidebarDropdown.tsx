@@ -1,7 +1,6 @@
 "use client";
 
 import { ChevronsLeftRight } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,6 +9,7 @@ import {
 } from "../ui/dropdown";
 import { SidebarMenuButton, useSidebar } from "../ui/sidebar";
 import { User } from "auth0";
+import Image from "next/image";
 
 interface SidebarDropdownProps {
   user?: User;
@@ -21,12 +21,19 @@ export const SidebarDropdown = ({ user }: SidebarDropdownProps) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="cursor-pointer">
         <SidebarMenuButton tooltip="Account">
-          <Avatar className="size-5">
-            <AvatarImage src={user?.picture} alt="User Avatar" />
-            <AvatarFallback>{user?.nickname?.[0]}</AvatarFallback>
-          </Avatar>
-          {state === "expanded" && <span>{user?.nickname}</span>}
-          <ChevronsLeftRight className="ml-auto" />
+          <Image
+            src={user?.picture || ""}
+            alt={`${user?.nickname ?? "User"} avatar`}
+            width={28}
+            height={28}
+            className="rounded-full"
+          />
+          {state === "expanded" && (
+            <>
+              <span>{user?.nickname}</span>
+              <ChevronsLeftRight className="ml-auto" />
+            </>
+          )}
         </SidebarMenuButton>
       </DropdownMenuTrigger>
       <DropdownMenuContent side="right" className="ml-2">
