@@ -9,18 +9,12 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown";
 import { SidebarMenuButton, useSidebar } from "../ui/sidebar";
+import { User } from "auth0";
 
 interface SidebarDropdownProps {
-  firstInitial?: string;
-  nickname?: string;
-  picture?: string;
+  user?: User;
 }
-
-export const SidebarDropdown = ({
-  firstInitial,
-  nickname,
-  picture,
-}: SidebarDropdownProps) => {
+export const SidebarDropdown = ({ user }: SidebarDropdownProps) => {
   const { state } = useSidebar();
 
   return (
@@ -28,10 +22,10 @@ export const SidebarDropdown = ({
       <DropdownMenuTrigger asChild className="cursor-pointer">
         <SidebarMenuButton tooltip="Account">
           <Avatar className="size-5">
-            <AvatarImage src={picture} alt="User Avatar" />
-            <AvatarFallback>{firstInitial}</AvatarFallback>
+            <AvatarImage src={user?.picture} alt="User Avatar" />
+            <AvatarFallback>{user?.nickname?.[0]}</AvatarFallback>
           </Avatar>
-          {state === "expanded" && <span>{nickname}</span>}
+          {state === "expanded" && <span>{user?.nickname}</span>}
           <ChevronsLeftRight className="ml-auto" />
         </SidebarMenuButton>
       </DropdownMenuTrigger>

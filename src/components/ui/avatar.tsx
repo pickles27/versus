@@ -14,7 +14,7 @@ function Avatar({
       data-slot="avatar"
       className={cn(
         "relative flex size-8 shrink-0 overflow-hidden rounded-full",
-        className,
+        className
       )}
       {...props}
     />
@@ -53,6 +53,9 @@ function AvatarFallback({
     "bg-[var(--color-baby-pink)]",
     "bg-[var(--color-neon-orange)]",
     "bg-[var(--color-neon-tangerine)]",
+    "bg-blue-500",
+    "bg-purple-600",
+    "bg-pink-500",
   ];
 
   const fallbackKey = props.children?.toString() || "default";
@@ -64,7 +67,7 @@ function AvatarFallback({
       className={cn(
         `flex size-full items-center justify-center rounded-full`,
         color,
-        className,
+        className
       )}
       {...props}
     />

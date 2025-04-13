@@ -1,4 +1,5 @@
-import { headers } from "next/headers";
+"use client";
+
 import {
   Home,
   Inbox,
@@ -19,8 +20,9 @@ import {
   SidebarMenuItem,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
-import { auth0 } from "@/lib/auth0";
 import { SidebarDropdown } from "./SidebarDropdown";
+import { usePathname } from "next/navigation";
+import { User } from "auth0";
 
 const items = [
   {
@@ -50,9 +52,12 @@ const items = [
   },
 ];
 
-export async function AppSidebar() {
-  const session = await auth0.getSession();
-  const currentPathname = (await headers()).get("x-current-path");
+interface AppSidebarProps {
+  user?: User;
+}
+
+export function AppSidebar({ user }: AppSidebarProps) {
+  const currentPathname = usePathname();
 
   return (
     <Sidebar className="mt-12" collapsible="icon">
@@ -98,7 +103,7 @@ export async function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-        {session?.user && (
+        {user && (
           <>
             <SidebarSeparator />
             <SidebarGroup>
@@ -106,11 +111,7 @@ export async function AppSidebar() {
               <SidebarGroupContent>
                 <SidebarMenu>
                   <SidebarMenuItem>
-                    <SidebarDropdown
-                      firstInitial={session.user.name?.[0]}
-                      nickname={session.user.nickname}
-                      picture={session.user.picture}
-                    />
+                    <SidebarDropdown user={user} />
                   </SidebarMenuItem>
                 </SidebarMenu>
               </SidebarGroupContent>
