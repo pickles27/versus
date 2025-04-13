@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { TopNav } from "@/components/nav/TopNav";
-import { AppSidebar } from "@/components/nav/AppSidebar"
+import { AppSidebar } from "@/components/nav/AppSidebar";
 import { Providers } from "@/providers/Providers";
 
 import "./globals.css";
@@ -32,12 +32,9 @@ export default function RootLayout({
         <Providers>
           <AppSidebar />
           <TopNav />
-            <main className="w-full">
-              {children}
-            </main>
+          <main className="w-full">{children}</main>
         </Providers>
       </body>
     </html>
   );
 }
-

@@ -29,9 +29,7 @@ export default async function Settings() {
       <Card className="w-96">
         <CardHeader>
           <CardTitle>Advanced</CardTitle>
-          <CardDescription>
-            Does nothing right now.
-          </CardDescription>
+          <CardDescription>Does nothing right now.</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex items-center gap-2">

@@ -1369,11 +1369,7 @@
             "format": "date-time"
           }
         },
-        "required": [
-          "user_id_1",
-          "user_id_2",
-          "created_at"
-        ]
+        "required": ["user_id_1", "user_id_2", "created_at"]
       },
       "Games": {
         "type": "object",
@@ -1518,11 +1514,7 @@
             "format": "date-time"
           }
         },
-        "required": [
-          "session_id",
-          "user_id",
-          "joined_at"
-        ]
+        "required": ["session_id", "user_id", "joined_at"]
       },
       "GameState": {
         "type": "object",
@@ -1539,11 +1531,7 @@
             "format": "date-time"
           }
         },
-        "required": [
-          "session_id",
-          "state",
-          "updated_at"
-        ]
+        "required": ["session_id", "state", "updated_at"]
       },
       "GameResults": {
         "type": "object",

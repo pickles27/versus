@@ -1,5 +1,9 @@
 export default async function NewGame() {
-  const games = [{ id: '1', name: 'Game 1' }, { id: '2', name: 'Game 2' }, { id: '3', name: 'Game 3' }];
+  const games = [
+    { id: "1", name: "Game 1" },
+    { id: "2", name: "Game 2" },
+    { id: "3", name: "Game 3" },
+  ];
   return (
     <div className="h-screen w-full flex items-center justify-center">
       <h1 className="text-2xl font-bold">New Game</h1>
@@ -12,7 +16,7 @@ export default async function NewGame() {
             {game.name}
           </div>
         ))}
-        </div>
+      </div>
     </div>
   );
 }

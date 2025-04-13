@@ -19,7 +19,7 @@ try {
   console.log(`${EMOJIS.whale} Docker is installed.`);
 } catch {
   console.log(
-    `${EMOJIS.error} Docker is not installed. Please install it first: https://docs.docker.com/get-docker/`
+    `${EMOJIS.error} Docker is not installed. Please install it first: https://docs.docker.com/get-docker/`,
   );
   process.exit(1);
 }
@@ -30,7 +30,7 @@ try {
   console.log(`${EMOJIS.running} Docker is running.`);
 } catch {
   console.log(
-    `${EMOJIS.error} Docker is installed but not running. Please launch the Docker Desktop app.`
+    `${EMOJIS.error} Docker is installed but not running. Please launch the Docker Desktop app.`,
   );
   process.exit(1);
 }
@@ -39,7 +39,7 @@ try {
 const composeFile = "compose.yml";
 if (!existsSync(composeFile)) {
   console.log(
-    `${EMOJIS.error} Missing ${composeFile}. Make sure you're in the root of the project.`
+    `${EMOJIS.error} Missing ${composeFile}. Make sure you're in the root of the project.`,
   );
   process.exit(1);
 }
