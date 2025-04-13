@@ -19,7 +19,7 @@ export async function TopNav() {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <span>
+            <span className="mr-auto">
               <SidebarTrigger className="bg-background" />
             </span>
           </TooltipTrigger>
