@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 
 export default async function Settings() {
   return (
-    <div className="h-screen px-8 pt-20 w-full flex flex-col gap-4">
+    <div className="flex flex-col gap-4">
       <h1 className="text-2xl font-bold">Settings</h1>
       <Card className="w-96">
         <CardHeader>

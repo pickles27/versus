@@ -3,7 +3,10 @@ import type { NextRequest } from "next/server";
 import { auth0 } from "./lib/auth0";
 
 export async function middleware(request: NextRequest) {
-  return await auth0.middleware(request);
+  const currentPathname = request.nextUrl.pathname;
+  const response = await auth0.middleware(request);
+  response.headers.set("x-current-path", currentPathname);
+  return response;
 }
 
 export const config = {

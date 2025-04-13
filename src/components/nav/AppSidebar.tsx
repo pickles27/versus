@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import {
   Home,
   Inbox,
@@ -51,9 +52,10 @@ const items = [
 
 export async function AppSidebar() {
   const session = await auth0.getSession();
+  const currentPathname = (await headers()).get("x-current-path");
 
   return (
-    <Sidebar className="mt-13" collapsible="icon">
+    <Sidebar className="mt-12" collapsible="icon">
       <SidebarContent className="gap-0">
         <SidebarGroup>
           <SidebarGroupLabel>Versus</SidebarGroupLabel>
@@ -61,7 +63,11 @@ export async function AppSidebar() {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild tooltip={item.title}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={currentPathname === item.url}
+                    tooltip={item.title}
+                  >
                     <a href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
@@ -78,7 +84,11 @@ export async function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild tooltip={"New Game"}>
+                <SidebarMenuButton
+                  asChild
+                  isActive={currentPathname === "/new-game"}
+                  tooltip="New Game"
+                >
                   <a href="/new-game">
                     <PlayIcon />
                     <span>New Game</span>

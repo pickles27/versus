@@ -37,7 +37,7 @@ export default async function RootLayout({
         <Providers isSidebarDefaultOpen={isSidebarDefaultOpen}>
           <AppSidebar />
           <TopNav />
-          <main className="w-full">{children}</main>
+          <main className="w-full h-screen px-8 pt-20">{children}</main>
         </Providers>
       </body>
     </html>
