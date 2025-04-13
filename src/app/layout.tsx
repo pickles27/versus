@@ -5,6 +5,7 @@ import { AppSidebar } from "@/components/nav/AppSidebar";
 import { Providers } from "@/providers/Providers";
 
 import "./globals.css";
+import { cookies } from "next/headers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,15 +22,19 @@ export const metadata: Metadata = {
   description: "Will you be victorious?",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const isSidebarDefaultOpen =
+    cookieStore.get("sidebar_state")?.value === "true";
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Providers>
+        <Providers isSidebarDefaultOpen={isSidebarDefaultOpen}>
           <AppSidebar />
           <TopNav />
           <main className="w-full">{children}</main>
